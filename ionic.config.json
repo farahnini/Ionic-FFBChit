@@ -1,0 +1,7 @@
+{
+  "name": "2_2022_buluh",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
