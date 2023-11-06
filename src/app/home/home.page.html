@@ -1,20 +1,84 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>FFB CHIT</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="form-container">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <ion-item>
+      <ion-label>TARIKH</ion-label>
+      <ion-input
+        value="{{ date | date: 'dd/MM/yyyy' }}"
+        id="date"
+        class="ion-text-end">
+      </ion-input>
+      <ion-popover trigger="date" size="cover">
+        <ng-template>
+          <ion-datetime
+            presentation="date"
+            [(ngModel)]="date"
+            locale="sl-SI"
+            [showDefaultButtons]="true"
+            doneText="Okay"
+            cancelText="Kembali"
+          ></ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+
+    <ion-item><ion-icon name="location-outline"></ion-icon>&nbsp;<h5>Maklumat Kawasan</h5></ion-item>
+    <ion-item>
+      <ion-label position="stacked" class="form-label">Ladang <span class="required">*</span></ion-label>
+      <ion-select class="form-input" placeholder="Pilih Ladang" [(ngModel)]="ladang" (ionChange)="onLadangChange()">
+        <ion-select-option *ngFor="let option of ladangOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" class="form-label">Peringkat <span class="required">*</span></ion-label>
+      <ion-select class="form-input" placeholder="Pilih Peringkat" [(ngModel)]="peringkat">
+        <ion-select-option *ngFor="let option of peringkatOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" class="form-label">Blok <span class="required">*</span></ion-label>
+      <ion-select class="form-input" placeholder="Pilih Blok" [(ngModel)]="blok">
+        <ion-select-option value="A">A</ion-select-option>
+        <ion-select-option value="B">B</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item style="margin-top:20px;">
+      <ion-icon name="people-outline"></ion-icon>&nbsp;
+      <h5>Maklumat Penuai</h5>
+      <ion-button color="secondary" (click)="addNamaPetugas()" slot="end">+</ion-button>           
+    </ion-item>
+    <ion-item *ngFor="let petugas of namaPetugasArray; let i = index" style="min-width:100%;padding: 0; margin: 0;">
+      <ion-label position="stacked" class="form-label">Petugas {{i+1}}<span class="required">*</span></ion-label>
+      <ion-select class="form-input" placeholder="Pilih Petugas" [(ngModel)]="namaPetugasArray[i]" style="max-width:80%;">
+        <ion-select-option *ngFor="let option of namaPetugasOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+      <ion-button class="delete-button" color="danger" slot="end" size="small" style="max-width:20%;margin-top:27px;border-radius:50px;" (click)="deleteNamaPetugas(i)">-</ion-button>
+    </ion-item>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button color="secondary" routerLink="/login" expand="full">
+            &lt;
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="secondary" [disabled]="!isFormValid()" (click)="submitForm()" expand="full">
+            &gt;
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    
+    
   </div>
 </ion-content>
+

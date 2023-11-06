@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: '2_2022_buluh',
+  appId: 'io.ionic.ffb_chit',
+  appName: 'FFB_Chit',
   webDir: 'www',
   bundledWebRuntime: false
 };

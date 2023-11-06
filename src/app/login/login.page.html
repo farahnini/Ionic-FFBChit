@@ -1,0 +1,25 @@
+<!-- <ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>FFB CHIT</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <img src="assets/fgv_logo.png" alt="FGV Logo">
+
+    <ion-item lines="none" class="input-field">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-input type="text" [(ngModel)]="staffID" placeholder="ID Pekerja"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-field">
+      <ion-icon name="lock-closed" slot="start"></ion-icon>
+      <ion-input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" clearOnEdit="false" placeholder="Kata Laluan"></ion-input>
+      <ion-icon name="eye" slot="end" *ngIf="showPassword" (click)="togglePasswordVisibility()"></ion-icon>
+      <ion-icon name="eye-off" slot="end" *ngIf="!showPassword" (click)="togglePasswordVisibility()"></ion-icon>
+    </ion-item>
+
+    <ion-button expand="full" color="secondary" class="login-button" (click)="validateLogin()">Log Masuk</ion-button>
+  </div>
+</ion-content>

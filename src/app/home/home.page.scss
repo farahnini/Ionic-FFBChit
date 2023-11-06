@@ -1,27 +1,103 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.avatar-container {
+  display: flex;
+  align-items: center;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+h3 {
   margin: 0;
 }
 
-#container a {
-  text-decoration: none;
+.form-container {
+  border: 2px solid rgb(190, 189, 189);
+  padding: 20px;
+  border-radius: 10px;
 }
+
+.form-label {
+  font-size: 1.2em;
+  flex: 1;
+  margin-right: 8px;
+  color:darkgreen;
+}
+
+.required {
+  color: red;
+}
+
+
+.form-container ion-item {
+  --border-radius: 10px;
+  // --padding-start: 12px;
+  // --padding-end: 12px;
+  --inner-padding-start: 0;
+  --inner-padding-end: 0;
+  --highlight-height: 0;
+  --highlight-color-valid: transparent;
+  --highlight-color-invalid: transparent;
+  --highlight-color-activated: transparent;
+  width: 100%;
+
+}
+
+.form-container ion-select {
+  --border-radius: 10px;
+  // --padding-start: 12px;
+  // --padding-end: 12px;
+  --inner-padding-start: 0;
+  --inner-padding-end: 0;
+  --highlight-height: 0;
+  --highlight-color-valid: transparent;
+  --highlight-color-invalid: transparent;
+  --highlight-color-activated: transparent;
+  min-width: 100%;
+
+}
+
+.form-input {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  width: 100%;
+  font-size:18px;
+  margin-top:5px;
+
+}
+
+.nama-petugas-item {
+  display: flex;
+  align-items: center;
+}
+
+.delete-button {
+  margin-left: 8px;
+}
+
+.input-button-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.input-wrapper {
+  min-width:245px;
+  margin-right: 10px;
+
+  ion-select-option{
+    text-align: left !important;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+
+
+
+

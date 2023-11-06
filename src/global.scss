@@ -24,3 +24,58 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {   
+    font-family: 'BebasNeue';    //This is what we are going to call
+    src: url('/assets/fonts/BebasNeue-Regular.ttf');
+  }
+
+@font-face {   
+  font-family: 'Urbanist';    //This is what we are going to call
+  font-weight: bold;
+  src: url('/assets/fonts/Urbanist.ttf');
+}
+
+.alert-wrapper { 
+  --border-radius: 10px!important;
+  min-width: 80%!important;
+
+  .alert-head {
+    color: green !important;
+  }
+
+  .alert-button {
+    min-width: 100px;
+    text-align: center!important;
+  }
+
+  .alert-button:first-child {
+    color: white;
+    background-color: red;
+  }
+
+  .alert-button:nth-child(2) {
+    color: white;
+    background-color: green;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+
+  td:first-child {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  td:last-child {
+    text-align: center;
+  }
+
+}

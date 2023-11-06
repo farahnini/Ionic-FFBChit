@@ -1,0 +1,59 @@
+ion-toolbar {
+
+    ion-title{
+      font-size: 24px; /* Adjust the font size as desired */
+      font-family: "Helvetica Neue", Arial, sans-serif; /* Use an iOS-like font */
+      font-weight:bold; 
+    }
+  
+  }
+  
+  
+  ion-content {
+    --overflow-y: hidden; /* Prevent vertical scrolling */
+    --overflow-x: hidden; /* Prevent horizontal scrolling */
+    --padding-bottom: 0; /* Remove bottom padding */
+    --padding-top: 0; /* Remove top padding */
+  }
+  
+  // .logo {
+  //   // width: 250px;
+  //   // height: 150px;
+  // }
+  
+  .login-container {
+    margin-top:20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overscroll-behavior: none; /* Prevents scrolling on touch devices */
+  }
+  
+  
+  .input-field {
+    margin-bottom: 20px;
+    --border-radius: 5px;
+    --border-width: 2px;
+    --border-color: #123456;
+    width: 80%; /* Added to control the width of the input fields */
+    font-family: Arial, sans-serif; /* Adjust the font-family to match iOS font */
+    font-size:large;
+    font-weight:bold; 
+    max-width: 400px; /* Added to limit the maximum width of the input fields */
+  }
+  
+  .login-button {
+    --border-radius: 10px;
+    --border-width: 2px;
+    --border-color: #123456;
+    --background: #123456;
+    --color: white;
+    font-family: Arial, sans-serif; /* Adjust the font-family to match iOS font */
+    font-size:large;
+    font-weight:bold; 
+    width: 80%; /* Added to control the width of the login button */
+    max-width: 400px; /* Added to limit the maximum width of the login button */
+  }
+  
